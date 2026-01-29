@@ -1,36 +1,78 @@
-<div align = "center">
-    <img src = "https://frappecloud.com/files/pos-restaurant.webp" height = "128">
+<div align="center">
+    <img src="https://frappecloud.com/files/pos-restaurant.webp" height="128">
     <h2>POS Restaurant</h2>
+    <p><strong>Restaurant Management System for ERPNext</strong></p>
+    <p>Version 1.8.6</p>
 </div>
 
-___
-> ### POS Restaurant includes the following functionalities:
+---
 
-1. Customized Permission Management based on ERPNext user roles.
-2. Custom permissions in the POS profile assigned to rooms.
-3. Management of personalized permits based on the activity of the restaurant.
-4. Dynamic management of the restaurant areas.
-5. Restaurant rooms, tables and production center.
-6. Individual order management by table and user.
-7. Process management based on Restaurant Production Center.
-8. Real time based on the user's activity when the restaurant areas are modified or when the user interacts with it.
-9. Compatible with Dark Theme.
+## ✨ What's New in v1.8.6
 
-___
-### ERPNext Restaurant Management requires
-1. [ERPNext](https://github.com/frappe/erpnext.git)
-    Frappe Helper is another experimental application created by us, in order to be reused by other applications.
+- **Frappe Helper Integrated** - No longer requires separate installation
+- **Table Reservations** - Reserve and lock tables for specific customers
+- **Menu Management** - Create menus; POS items are pulled from your configured menu
+- **Branch Delivery** - Assign delivery orders to specific branches
+- **Veg/Non-Veg Filter** - Quick dietary filtering for items
+- **Recipe (BOM) Support** - Define ingredients per dish for inventory control and costing
+- **Mobile Tabs View** - Tab navigation (Options, Orders, Items, Cart) for table management
 
-___
-### Compatibility
-> V13, V14
+---
 
-___
-ERPNext Restaurant Management is based on [Frappe Framework](https://github.com/frappe/frappe).
+## 🍳 Production Center System
 
-___
+The core of POS Restaurant is the **Production Center** (Kitchen Display System). Each production center reads orders in real-time based on order status.
 
-### License
-> GNU / General Public License (see [license.txt](license.txt))
+### Flexible Restrictions
 
-> The POS Restaurant code is licensed under the GNU General Public License (v3).
+Administrators can configure each Production Center with three restriction levels:
+
+| Restriction | Example |
+|-------------|---------|
+| **By Parent Room** | Kitchen PC in Room 1 only sees orders from Room 1 |
+| **By Room List** | Bar PC sees orders from Terrace + Lounge rooms |
+| **By Table List** | VIP Kitchen sees only orders from tables 1, 2, 3 |
+
+### Product Group Filtering
+
+Production Centers can also filter by item groups:
+
+- **Bar PC** → Only cold drinks
+- **Coffee Station** → Only hot beverages  
+- **Main Kitchen** → Only food items
+
+This allows multiple production centers to read from the same rooms but handle different product types.
+
+---
+
+## 🚀 Key Features
+
+- **Room & Table Management** - Dynamic restaurant areas with drag-and-drop
+- **Real-time Updates** - Instant sync across all stations
+- **Role-based Permissions** - Custom access per POS profile and room
+- **Order Process Tracking** - Status-based workflow (Pending → Preparing → Ready)
+- **Dark Theme Compatible**
+
+---
+
+## 📋 Requirements
+
+- [ERPNext](https://github.com/frappe/erpnext) V13, V14, or V15
+
+---
+
+## 🔧 Installation
+
+```bash
+bench get-app https://github.com/alphabit-technology/erpnext-restaurant.git
+bench --site your-site.local install-app restaurant_management
+bench migrate
+```
+
+---
+
+## 📄 License
+
+GNU General Public License (v3) - see [license.txt](license.txt)
+
+---
