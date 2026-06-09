@@ -377,6 +377,8 @@ class PayForm extends DeskForm {
   }
 
   print(invoice_name) {
+    return;
+    // Returing as instant print not required
     if (!RM.can_pay) return;
 
     const title = invoice_name + " (" + __("Print") + ")";
