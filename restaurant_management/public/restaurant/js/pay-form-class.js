@@ -428,9 +428,10 @@ class PayForm extends DeskForm {
   }
 
   set_total_payment() {
-    if (this.actions.pay) {
-      this.actions.pay.set_content(`<span style="font-size: 25px; font-weight: 400">{{text}} ${this.order.total_money}</span>`);
-      this.actions.pay.val(__("Pay"));
-    }
+    //Comenting due to undefined error
+    //if (this.actions.pay) {
+    //  this.actions.pay.set_content(`<span style="font-size: 25px; font-weight: 400">{{text}} ${this.order.total_money}</span>`);
+    //  this.actions.pay.val(__("Pay"));
+    //}
   }
 }
